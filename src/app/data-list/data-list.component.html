@@ -1,0 +1,3 @@
+<div *ngFor="let number of data$ | async; trackBy: trackByFn">
+  <app-data-list-item [item]="number"></app-data-list-item>
+</div>
