@@ -3,11 +3,13 @@
     <mat-card-title>{{ layer.layer }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <!-- <app-data-list *ngIf="layer.isViewList"></app-data-list> -->
-    <app-data-list-rx *ngIf="layer.isViewList"></app-data-list-rx>
+    <!-- <app-data-list [layer]="layer" *ngIf="layer.isViewList"></app-data-list> -->
+    <app-data-list-rx [layer]="layer" *ngIf="layer.isViewList"></app-data-list-rx>
   </mat-card-content>
   <mat-card-actions>
-    <app-counter [layer]="layer"></app-counter>
+    <!-- <app-counter [layer]="layer"></app-counter> -->
+    <app-counter-rx [layer]="layer"></app-counter-rx>
   </mat-card-actions>
 </mat-card>
-<app-layer [layer]="item" *ngFor="let item of layer?.child"></app-layer>
+<!-- <app-layer [layer]="item" *ngFor="let item of layer?.child"></app-layer> -->
+<app-layer [layer]="item" *rxFor="let item of layer?.child"></app-layer>

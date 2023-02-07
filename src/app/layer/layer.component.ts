@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { ForModule } from '@rx-angular/template/for';
+import { CounterRxComponent } from '../counter-rx/counter-rx.component';
 import { CounterComponent } from '../counter/counter.component';
 import { DataListRxComponent } from '../data-list-rx/data-list-rx.component';
+import { DataListComponent } from '../data-list/data-list.component';
 import { NotifyDirective } from '../directives/notify.directive';
 import { Layer } from '../shared/interfaces';
 
@@ -14,10 +15,11 @@ import { Layer } from '../shared/interfaces';
   imports: [
     CommonModule,
     ForModule,
-    MatButtonModule,
     MatCardModule,
+    DataListComponent,
     DataListRxComponent,
     CounterComponent,
+    CounterRxComponent,
     NotifyDirective,
   ],
   templateUrl: './layer.component.html',
@@ -28,6 +30,6 @@ export class LayerComponent {
   @Input() layer!: Layer;
 
   public ngDoCheck(): void {
-    console.log(`ngDoCheck ${this.layer?.layer}`);
+    console.log(`ngDoCheck app-layer ${this.layer?.layer}`);
   }
 }

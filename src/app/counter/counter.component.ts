@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { NumbersService } from '../services/numbers.service';
 import { Layer } from '../shared/interfaces';
 
@@ -8,6 +9,7 @@ import { Layer } from '../shared/interfaces';
   standalone: true,
   imports: [
     CommonModule,
+    MatButtonModule,
   ],
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss'],
@@ -29,5 +31,4 @@ export class CounterComponent {
   public onDecrease(): void {
     this.NumbersService.popData();
   }
-
 }

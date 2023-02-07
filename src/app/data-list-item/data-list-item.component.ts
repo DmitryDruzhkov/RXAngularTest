@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { NotifyDirective } from '../directives/notify.directive';
+import { Layer } from '../shared/interfaces';
 
 @Component({
   selector: 'app-data-list-item',
@@ -14,9 +15,10 @@ import { NotifyDirective } from '../directives/notify.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataListItemComponent {
+  @Input() layer!: Layer;
   @Input() item: number = 0;
 
   public ngDoCheck(): void {
-    console.log(`ngDoCheck app-data-list ${this.item}`)
+    console.log(`ngDoCheck app-data-list-item ${this.layer?.layer} ${this.item}`)
   }
 }
