@@ -1,15 +1,34 @@
 <mat-card appNotify>
+
   <mat-card-header>
     <mat-card-title>{{ layer.layer }}</mat-card-title>
   </mat-card-header>
+
   <mat-card-content>
-    <!-- <app-data-list [layer]="layer" *ngIf="layer.isViewList"></app-data-list> -->
-    <app-data-list-rx [layer]="layer" *ngIf="layer.isViewList"></app-data-list-rx>
+    <ng-container *ngTemplateOutlet="layer.isListRx ? listRx : list"></ng-container>
+    <ng-template #list>
+      <app-data-list [layer]="layer" *ngIf="layer.isViewList"></app-data-list>
+    </ng-template>
+    <ng-template #listRx>
+      <app-data-list-rx [layer]="layer" *ngIf="layer.isViewList"></app-data-list-rx>
+    </ng-template>
   </mat-card-content>
+
   <mat-card-actions>
-    <!-- <app-counter [layer]="layer"></app-counter> -->
-    <app-counter-rx [layer]="layer"></app-counter-rx>
+    <ng-container *ngTemplateOutlet="layer.isCounterRx ? counterRx : counter"></ng-container>
+    <ng-template #counter>
+      <app-counter [layer]="layer"></app-counter>
+    </ng-template>
+    <ng-template #counterRx>
+      <app-counter-rx [layer]="layer"></app-counter-rx>
+    </ng-template>
   </mat-card-actions>
 </mat-card>
-<!-- <app-layer [layer]="item" *ngFor="let item of layer?.child"></app-layer> -->
-<app-layer [layer]="item" *rxFor="let item of layer?.child"></app-layer>
+
+<ng-container *ngTemplateOutlet="layer.isChildRx ? childRx : child"></ng-container>
+<ng-template #child>
+  <app-layer [layer]="item" *ngFor="let item of layer?.child"></app-layer>
+</ng-template>
+<ng-template #childRx>
+  <app-layer [layer]="item" *rxFor="let item of layer?.child"></app-layer>
+</ng-template>

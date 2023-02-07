@@ -24,7 +24,7 @@ export class DataListRxComponent {
   public data$: Observable<number[]> = inject(NumbersService).getData();
 
   public ngDoCheck(): void {
-    console.log(`ngDoCheck app-data-list ${this.layer.layer}`)
+    console.log(`ngDoCheck app-data-list rx ${this.layer.layer}`)
   }
 
   public trackByFn(idx: number, item: number): number {
