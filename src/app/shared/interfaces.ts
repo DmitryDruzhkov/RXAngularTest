@@ -1,7 +1,7 @@
 export interface Layer {
-  id: number;
-  layer: string;
-  isViewList: boolean;
+  id?: number;
+  layer?: string;
+  isViewList?: boolean;
   isListRx?: boolean;
   isCounterRx?: boolean;
   isChildRx?: boolean;

@@ -27,6 +27,6 @@ export class AppComponent {
   }
 
   public trackByFn(idx: number, item: Layer): number {
-    return item.id;
+    return item.id as number;
   }
 }
