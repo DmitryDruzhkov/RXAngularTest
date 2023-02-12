@@ -32,4 +32,8 @@ export class LayerComponent {
   public ngDoCheck(): void {
     console.log(`ngDoCheck app-layer ${this.layer?.layer}`);
   }
+
+  public alert() :void {
+    console.log(`alert app-layer ${this.layer?.layer}`);
+  }
 }
