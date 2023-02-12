@@ -10,7 +10,7 @@ const getLayerConfig = () => ({
   isViewList: false,
   isChildRx: true,
   isListRx: true,
-  isCounterRx: false,
+  isCounterRx: true,
   id: getLayerId(),
 })
 
