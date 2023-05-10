@@ -16,17 +16,21 @@ import { UnpatchModule } from '@rx-angular/template/unpatch';
 export class CounterRxComponent {
   @Input() layer!: Layer;
 
-  constructor(private NumbersService: NumbersService) {}
+  constructor(private numbersService: NumbersService) {}
 
-  public ngDoCheck(): void {
+  /* public ngDoCheck(): void {
     console.log(`ngDoCheck app-counter rx ${this.layer.layer}`)
-  }
+  } */
 
   public onIncrease(): void {
-    this.NumbersService.pushData();
+    this.numbersService.pushData();
   }
 
   public onDecrease(): void {
-    this.NumbersService.popData();
+    this.numbersService.popData();
+  }
+
+  public alert() :void {
+    console.log(`alert app-counter-rx ${this.layer?.layer}`);
   }
 }

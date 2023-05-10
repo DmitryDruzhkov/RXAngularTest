@@ -20,9 +20,9 @@ export class CounterComponent {
 
   constructor(private NumbersService: NumbersService) {}
 
-  public ngDoCheck(): void {
+  /* public ngDoCheck(): void {
     console.log(`ngDoCheck app-counter ${this.layer.layer}`)
-  }
+  } */
 
   public onIncrease(): void {
     this.NumbersService.pushData();
@@ -30,5 +30,9 @@ export class CounterComponent {
 
   public onDecrease(): void {
     this.NumbersService.popData();
+  }
+
+  public alert() :void {
+    console.log(`alert app-counter ${this.layer?.layer}`);
   }
 }

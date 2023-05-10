@@ -1,8 +1,13 @@
-import { ApplicationRef } from '@angular/core';
+import { ApplicationRef, provideZoneChangeDetection } from '@angular/core';
 import { bootstrapApplication, enableDebugTools } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 
-bootstrapApplication(AppComponent).then((moduleRef) => {
+bootstrapApplication(AppComponent, {
+  providers: [provideZoneChangeDetection({
+    eventCoalescing: true,
+    runCoalescing: true
+  })],
+}).then((moduleRef) => {
   const applicationRef = moduleRef.injector.get(ApplicationRef);
   const componentRef = applicationRef.components[0];
   enableDebugTools(componentRef);

@@ -18,7 +18,11 @@ export class DataListItemComponent {
   @Input() layer!: Layer;
   @Input() item: number = 0;
 
-  public ngDoCheck(): void {
+  /* public ngDoCheck(): void {
     console.log(`ngDoCheck app-data-list-item ${this.layer?.layer} ${this.item}`)
+  } */
+
+  public alert() :void {
+    console.log(`alert app-data-list-item ${this.layer?.layer}`);
   }
 }

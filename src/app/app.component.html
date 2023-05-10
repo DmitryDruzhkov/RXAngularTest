@@ -1,4 +1,6 @@
+{{alert()}}
 <div class="data">
+  <app-layer [layer]="layer" *ngFor="let layer of layers(); trackBy: trackByFn"></app-layer>
   <!-- <app-layer [layer]="layer" *ngFor="let layer of layers$ | async; trackBy: trackByFn"></app-layer> -->
-  <app-layer [layer]="layer" *rxFor="let layer of layers$; trackBy: trackByFn"></app-layer>
+  <!-- <app-layer [layer]="layer" *rxFor="let layer of layers$; trackBy: trackByFn"></app-layer> -->
 </div>

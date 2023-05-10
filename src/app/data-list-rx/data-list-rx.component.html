@@ -1,3 +1,7 @@
-<div *rxFor="let number of data$; trackBy: trackByFn">
+{{alert()}}
+<!-- <div *rxFor="let number of data$; trackBy: trackByFn">
+  <app-data-list-item [layer]="layer" [item]="number"></app-data-list-item>
+</div> -->
+<div *rxFor="let number of data(); trackBy: trackByFn">
   <app-data-list-item [layer]="layer" [item]="number"></app-data-list-item>
 </div>

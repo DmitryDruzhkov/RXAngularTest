@@ -1,3 +1,7 @@
-<div *ngFor="let number of data$ | async; trackBy: trackByFn">
+{{alert()}}
+<!-- <div *ngFor="let number of data$ | async; trackBy: trackByFn">
+  <app-data-list-item [layer]="layer" [item]="number"></app-data-list-item>
+</div> -->
+<div *ngFor="let number of data(); trackBy: trackByFn">
   <app-data-list-item [layer]="layer" [item]="number"></app-data-list-item>
 </div>
